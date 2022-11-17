@@ -11,9 +11,10 @@ player.on('timeupdate', throttle(onPlay, 1000));
 function onPlay(data) {
   console.log(data);
   try {
-    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data))
+    return localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data));
   } catch (error) { 
     console.log(error.name)
+    return [];
   }
   
 };
