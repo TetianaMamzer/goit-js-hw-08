@@ -18,12 +18,16 @@ refs.message.addEventListener('input', throttle(onMessage, 500));
 
 function onButtonClick(e) {
 e.preventDefault();
-
-e.currentTarget.reset();
-localStorage.removeItem(LOCALSTORAGE_KEY);
-localStorage.removeItem('Email');
-console.log(formDate);
-
+if (refs.email.value === "") {
+  alert('всі поля повинні бути заповнені!');
+} else if (refs.message.value  === "") {
+  alert('всі поля повинні бути заповнені!');
+} else {
+  localStorage.removeItem(LOCALSTORAGE_KEY);
+  localStorage.removeItem('Email');
+  console.log(formDate);
+  e.currentTarget.reset();
+};
 };
 function onInputClick(e) {
 formDate[e.target.name] = e.target.value;

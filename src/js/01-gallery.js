@@ -5,7 +5,6 @@ import { galleryItems } from './gallery-items.js';
 const galleryCreate = document.querySelector('div.gallery');
 const galleryCard = createCard(galleryItems);
 
-console.log(galleryCard);
 galleryCreate.insertAdjacentHTML('beforeend', galleryCard);
 galleryCreate.addEventListener('click', onCardGallery);
 
