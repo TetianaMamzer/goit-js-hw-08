@@ -20,7 +20,7 @@ return saveTime || [];
 
 function load() {
 create = getTime();
-console.log(create.seconds)
+
 player.setCurrentTime(create.seconds || 0);
 };
 
