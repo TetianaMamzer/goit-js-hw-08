@@ -10,12 +10,23 @@ player.on('timeupdate', throttle(onPlay, 1000));
 
 function onPlay(data) {
   console.log(data);
-  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data))
+  try {
+    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(data))
+  } catch (error) { 
+    console.log(error.name)
+  }
+  
 };
 
 function getTime() {
-const saveTime = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-return saveTime || [];
+  try {
+    const saveTime = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+    return saveTime || [];
+  } catch (error) {
+    console.log(error.name)
+  }
+
+
 };
 
 function load() {
